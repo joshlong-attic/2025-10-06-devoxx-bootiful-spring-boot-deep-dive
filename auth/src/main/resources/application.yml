@@ -29,3 +29,4 @@ spring:
     name: auth
 server:
   port: 9090
+

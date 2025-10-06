@@ -68,7 +68,7 @@
         <div class="loading">Loading dog data...</div>
     </div>
 
-    <div>
+    <!-- <div>
         <form>
             <textarea style="width:100%" rows="10" id="ask" name="ask" placeholder="Type here…"></textarea>
             <br/>
@@ -76,7 +76,7 @@
 
             <div id="reply"></div>
         </form>
-    </div>
+    </div> -->
 
 </div>
 
@@ -86,7 +86,8 @@
 
         const replyArea = document.getElementById('reply')
         const queryTextArea = document.getElementById('ask')
-        const askButton = document.getElementById('askButton')
+        // const askButton = document.getElementById('askButton')
+        /*
         askButton.addEventListener('click', async (e) => {
             e.preventDefault();
             const query = queryTextArea.value;
@@ -109,6 +110,7 @@
 
             replyArea.innerHTML = finalReply
         })
+        */
 
 
         const user = await (await (await window.fetch('/dogs/me')).json())['name'];
@@ -118,7 +120,7 @@
         const contentDiv = document.getElementById('content');
 
         const dogs = await (await window.fetch('/dogs/dogs')).json()
-
+        console.log (dogs )
         contentDiv.innerHTML = '';
 
         const table = document.createElement('table');
